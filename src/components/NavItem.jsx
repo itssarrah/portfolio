@@ -16,7 +16,7 @@ const NavItem = ({ href, icon: Icon, label, isActive, onClick, colors }) => {
     <a
       href={href || '#'}
       onClick={handleClick}
-      className={`flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-300 ${
+      className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 text-sm ${
         isActive 
           ? 'text-white shadow-lg transform scale-105' 
           : 'text-gray-700 hover:text-white hover:shadow-md'
@@ -26,7 +26,7 @@ const NavItem = ({ href, icon: Icon, label, isActive, onClick, colors }) => {
       }}
     >
       <Icon size={18} />
-      <span className="hidden md:block font-medium">{label}</span>
+      <span className="hidden sm:block font-medium">{label}</span>
     </a>
   );
 };
