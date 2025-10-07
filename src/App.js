@@ -21,6 +21,7 @@ import GalleryContent from './pages/GalleryContent';
 import { hackathons } from './data/hackathons';  // Import hackathons here
 
 const App = () => {
+  const [language, setLanguage] = useState('en');
   const [activeSection, setActiveSection] = useState('hero');
   const [isVisible, setIsVisible] = useState({});
   const [currentPage, setCurrentPage] = useState('portfolio');
@@ -104,6 +105,8 @@ const App = () => {
           nextImage={nextImage}
           prevImage={prevImage}
           setCurrentImageIndex={setCurrentImageIndex}
+          language={language}
+          setLanguage={setLanguage}
         />
       ) : (
         <GalleryContent 
