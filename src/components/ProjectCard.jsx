@@ -1,7 +1,13 @@
 import React from 'react';
 import { Github } from 'lucide-react';
 
-const ProjectCard = ({ project, type, colors }) => (
+import { translations } from '../translations';
+
+const ProjectCard = ({ language, project, type, colors }) => {
+  // ✅ Get the correct translations inside the component
+  const t = translations[language] || translations.en;
+
+  return (
   <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
     <div className="relative">
       <img 
@@ -56,11 +62,12 @@ const ProjectCard = ({ project, type, colors }) => (
           }}
         >
           <Github size={16} />
-          <span>View Code</span>
+          <span>{t.projects.viewCode}</span>
         </a>
       </div>
     </div>
   </div>
-);
+
+)};
 
 export default ProjectCard;
