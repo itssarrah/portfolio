@@ -45,12 +45,12 @@ export const HackathonCard = ({
   useEffect(() => {
     if (hackathon.images && hackathon.images.length > 1) {
       const interval = setInterval(() => {
-        nextImage();
+        setCurrentImageIndex((prev) => (prev + 1) % hackathon.images.length);
       }, 5000); // Change image every 5 seconds
       
       return () => clearInterval(interval);
     }
-  }, [currentImageIndex, hackathon.images]);
+  }, [hackathon.images]);
 
   return (
     <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
@@ -68,7 +68,7 @@ export const HackathonCard = ({
             <div key={imgIndex} className="min-w-full h-full relative">
               <img 
                 src={image} 
-                alt={`${hackathon.title} - Image ${imgIndex + 1}`}
+                alt={`${hackathon.title} slide ${imgIndex + 1}`}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 onError={(e) => {
                   e.target.style.display = 'none';
