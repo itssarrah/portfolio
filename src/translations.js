@@ -14,7 +14,7 @@ export const translations = {
     hero: {
       school: 'National Higher School of Artificial Intelligence, Algiers',
       title: 'AI Engineer & Master\'s Student',
-      description: 'I\'m a final-year Artificial Intelligence student with a strong focus on computer vision. I enjoy building systems that can understand and interpret visual data, and I\'m especially interested in applying AI to solve meaningful, real-world challenges. While computer vision is my main area, I\'ve also explored other domains like natural language processing and speech, which have shaped the way I approach problems with a wider perspective.',
+      description: 'I\'m a final-year Artificial Intelligence student with a strong focus on computer vision. I enjoy building systems that can understand and interpret visual data, and I\'m especially interested in applying AI to solve meaningful, real-world challenges. While computer vision is my main area, I\'ve also explored other domains like natural language processing and speech, which have shaped the way I approach problems with a wider perspective. Let\'s Have a chat !',
       cta: {
         contactMeHero: 'Contact Me',
         downloadCV: 'Download CV'

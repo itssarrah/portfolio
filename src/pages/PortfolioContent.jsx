@@ -280,7 +280,7 @@ const PortfolioContent = ({
               <li>
                 Application de techniques avancées de <strong>GeoAI</strong> et de{" "}
                 <strong>Télédétection</strong> (Vision Transformers, CNNs, GANs, apprentissage auto-supervisé)
-                pour l’analyse d’images satellites : cartographie forestière, classification des couverts
+                pour l'analyse d'images satellites : cartographie forestière, classification des couverts
                 terrestres et surveillance de la santé des cultures.
               </li>
               <li>
@@ -289,12 +289,12 @@ const PortfolioContent = ({
               </li>
               <li>
                 Amélioration de la généralisation des modèles grâce à des techniques innovantes
-                d’augmentation de données (basées sur <strong>GAN</strong>, <strong>CutMix</strong>, <strong>TTL</strong>).
+                d'augmentation de données (basées sur <strong>GAN</strong>, <strong>CutMix</strong>, <strong>TTL</strong>).
               </li>
               <li>
-                Participation à des hackathons centrés sur des solutions d’IA pour la classification
-                forestière et la cartographie des champs de blé, via le transfert d’apprentissage et
-                l’adaptation de domaine.
+                Participation à des hackathons centrés sur des solutions d'IA pour la classification
+                forestière et la cartographie des champs de blé, via le transfert d'apprentissage et
+                l'adaptation de domaine.
               </li>
             </>
           ) : (
@@ -454,8 +454,8 @@ const PortfolioContent = ({
           style={{ fontFamily: 'Montserrat, sans-serif' }}
         >
           {language === 'fr'
-            ? `En tant que nouvelle chercheuse dans le domaine, je suis passionnée par la contribution à l’avancement de l’intelligence artificielle 
-            et de l’apprentissage automatique. Mes recherches portent sur les applications pratiques de l’IA dans les systèmes énergétiques, 
+            ? `En tant que nouvelle chercheuse dans le domaine, je suis passionnée par la contribution à l'avancement de l'intelligence artificielle 
+            et de l'apprentissage automatique. Mes recherches portent sur les applications pratiques de l'IA dans les systèmes énergétiques, 
             la santé et la vision par ordinateur. Chaque publication représente une étape supplémentaire dans mon parcours pour rapprocher 
             la recherche théorique des solutions concrètes.`
             : `As a newcomer to the research field, I'm passionate about contributing to the advancement of artificial intelligence 
@@ -472,15 +472,14 @@ const PortfolioContent = ({
     </div>
   </div>
 </section>
-
-      {/* Footer */}
+{/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: colors.primary }}>
-                  <img src='/Pic.jpg' className="text-white rounded-[100%] w-full h-full object-cover" size={16} />
+                  <img src='/Pic.jpg' className="text-white rounded-[100%] w-full h-full object-cover" alt="Sarra Arab" />
                 </div>
                 <span className="text-xl font-bold" style={{ fontFamily: 'Gloock, serif' }}>
                   Sarra Arab
@@ -488,8 +487,8 @@ const PortfolioContent = ({
               </div>
               <p className="text-gray-400" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                 {language === 'fr'
-            ? "Ingénieure en IA passionnée par le développement de solutions innovantes pour relever les défis du monde réel."
-            : "AI Engineer passionate about developing innovative solutions for real-world challenges."}
+                  ? "Ingénieure en IA passionnée par le développement de solutions innovantes pour relever les défis du monde réel."
+                  : "AI Engineer passionate about developing innovative solutions for real-world challenges."}
               </p>
             </div>
             
@@ -504,7 +503,7 @@ const PortfolioContent = ({
                 </p>
                 <p className="flex items-center space-x-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   <Phone size={16} />
-                  <span>+213 540221667</span>
+                  <span>+213 784783701</span>
                 </p>
                 <p className="flex items-center space-x-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   <MapPin size={16} />
@@ -515,7 +514,7 @@ const PortfolioContent = ({
             
             <div>
               <h4 className="text-lg font-semibold mb-4" style={{ fontFamily: 'Gloock, serif' }}>
-                 {language === 'fr' ? "Suivez-moi" : "Follow Me"}
+                {language === 'fr' ? "Suivez-moi" : "Follow Me"}
               </h4>
               <div className="flex space-x-4">
                 <a
@@ -523,6 +522,7 @@ const PortfolioContent = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                  aria-label="LinkedIn"
                 >
                   <Linkedin size={24} />
                 </a>
@@ -531,8 +531,24 @@ const PortfolioContent = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                  aria-label="GitHub"
                 >
                   <Github size={24} />
+                </a>
+                <a
+                  href="https://www.researchgate.net/profile/Sarra-Arab?ev=hdr_xprf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                  aria-label="ResearchGate"
+                >
+                  <img 
+                    src="/researchgate.png"
+                    alt="ResearchGate"
+                    width="24"
+                    height="24"
+                    className="w-6 h-6"
+                  />
                 </a>
               </div>
             </div>
@@ -541,8 +557,8 @@ const PortfolioContent = ({
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p style={{ fontFamily: 'Montserrat, sans-serif' }}>
               {language === 'fr'
-          ? "© 2025 Sarra Arab. Tous droits réservés."
-          : "© 2025 Sarra Arab. All rights reserved."}
+                ? "© 2025 Sarra Arab. Tous droits réservés."
+                : "© 2025 Sarra Arab. All rights reserved."}
             </p>
           </div>
         </div>
