@@ -59,11 +59,10 @@ function TypewriterText({ text, speed = 60, scrambleDuration = 400, startDelay =
 const HeroSection = ({ language, onReady }) => {
   const [sceneLoaded, setSceneLoaded] = useState(false);
   const [nameComplete, setNameComplete] = useState(false);
-  const [roleComplete, setRoleComplete] = useState(false);
   const overlayRef = useRef(null);
 
   const onNameDone = useCallback(() => setNameComplete(true), []);
-  const onRoleDone = useCallback(() => setRoleComplete(true), []);
+  const onRoleDone = useCallback(() => {}, []);
 
   useEffect(() => {
     if (nameComplete && onReady) onReady();

@@ -232,7 +232,7 @@ function HackathonCard({ hackathon, index }) {
                 >
                   <img
                     src={`/${img}`}
-                    alt={`${hackathon.title} photo ${imgIndex + 1}`}
+                    alt={`${hackathon.title} ${imgIndex + 1}`}
                     className="w-14 h-14 object-cover rounded"
                     loading="lazy"
                     decoding="async"
