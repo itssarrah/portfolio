@@ -534,6 +534,15 @@ html {
   animation: treeSwayAlt 8s ease-in-out infinite 1s;
 }
 
+/* Fairy light bulb glow */
+@keyframes fairyGlow {
+  0%, 100% { opacity: 0.4; box-shadow: 0 0 4px 1px rgba(255,228,181,0.3); }
+  50% { opacity: 1; box-shadow: 0 0 8px 3px rgba(255,228,181,0.6); }
+}
+.fairy-bulb-glow {
+  animation: fairyGlow 2.5s ease-in-out infinite;
+}
+
 /* Hackathon card hover — pure CSS */
 .hackathon-card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;

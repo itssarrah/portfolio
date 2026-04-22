@@ -10,25 +10,11 @@ function toOptimized(path) {
 
 function FairyLightBulb({ delay = 0 }) {
   return (
-    <motion.div
-      className="w-2.5 h-2.5 rounded-full relative"
+    <div
+      className="w-2.5 h-2.5 rounded-full fairy-bulb-glow"
       style={{
         background: 'radial-gradient(circle, #FFF5E6 30%, #FFE4B5 70%)',
-        boxShadow: '0 0 6px 2px rgba(255,228,181,0.5)',
-      }}
-      animate={{
-        opacity: [0.4, 1, 0.4],
-        boxShadow: [
-          '0 0 4px 1px rgba(255,228,181,0.3)',
-          '0 0 10px 4px rgba(255,228,181,0.7)',
-          '0 0 4px 1px rgba(255,228,181,0.3)',
-        ],
-      }}
-      transition={{
-        duration: 2.5,
-        repeat: Infinity,
-        ease: 'easeInOut',
-        delay,
+        animationDelay: `${delay}s`,
       }}
     />
   );
@@ -99,9 +85,9 @@ function HackathonCard({ hackathon, index }) {
   const hoverRotation = rotations[index % rotations.length];
 
   const slideVariants = {
-    enter: (dir) => ({ x: dir > 0 ? 80 : -80, opacity: 0 }),
+    enter: (dir) => ({ x: dir > 0 ? '30%' : '-30%', opacity: 0 }),
     center: { x: 0, opacity: 1 },
-    exit: (dir) => ({ x: dir > 0 ? -80 : 80, opacity: 0 }),
+    exit: (dir) => ({ x: dir > 0 ? '-30%' : '30%', opacity: 0 }),
   };
 
   const visibleThumbs = images.length > 5 ? images.slice(0, 5) : images;
@@ -132,7 +118,7 @@ function HackathonCard({ hackathon, index }) {
             touchStartX.current = null;
           }}
         >
-          <AnimatePresence initial={false} custom={direction} mode="popLayout">
+          <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.img
               key={images[mainImageIndex]}
               src={`/${images[mainImageIndex]}`}
@@ -150,28 +136,20 @@ function HackathonCard({ hackathon, index }) {
           </AnimatePresence>
 
           {/* Nav arrows — desktop only, visible on hover */}
-          <motion.button
+          <button
             onClick={(e) => { e.stopPropagation(); goPrev(); }}
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm hidden md:flex items-center justify-center text-warm-brown shadow-md z-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 0.2 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm hidden md:flex items-center justify-center text-warm-brown shadow-md z-10 transition-opacity"
+            style={{ opacity: isHovered ? 1 : 0 }}
           >
             <ChevronLeft size={16} />
-          </motion.button>
-          <motion.button
+          </button>
+          <button
             onClick={(e) => { e.stopPropagation(); goNext(); }}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm hidden md:flex items-center justify-center text-warm-brown shadow-md z-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 0.2 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm hidden md:flex items-center justify-center text-warm-brown shadow-md z-10 transition-opacity"
+            style={{ opacity: isHovered ? 1 : 0 }}
           >
             <ChevronRight size={16} />
-          </motion.button>
+          </button>
 
           {/* Photo counter */}
           <div className="absolute bottom-2 right-2 px-2 py-0.5 bg-black/40 backdrop-blur-sm text-white text-xs rounded-full z-10 font-body">
@@ -186,16 +164,15 @@ function HackathonCard({ hackathon, index }) {
                 onClick={(e) => { e.stopPropagation(); goTo(i); }}
                 className="p-0 border-0 outline-none focus:outline-none"
               >
-                <motion.div
+                <div
                   className="rounded-full"
                   style={{
                     width: i === mainImageIndex ? 16 : 6,
                     height: 6,
                     background: i === mainImageIndex ? '#FFB7C5' : 'rgba(255,255,255,0.6)',
                     borderRadius: 3,
+                    transition: 'width 0.25s ease, background 0.25s ease',
                   }}
-                  layout
-                  transition={{ duration: 0.25 }}
                 />
               </button>
             ))}
@@ -209,18 +186,13 @@ function HackathonCard({ hackathon, index }) {
               const imgIndex = images.indexOf(img);
               const isActive = imgIndex === mainImageIndex;
               return (
-                <motion.button
+                <button
                   key={img}
                   onClick={() => goTo(imgIndex)}
                   className="flex-shrink-0 rounded overflow-hidden focus:outline-none relative"
                   style={{
                     border: isActive ? '2px solid #FFB7C5' : '2px solid transparent',
                   }}
-                  whileHover={{ scale: 1.08, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: thumbIdx * 0.05 }}
                 >
                   <img
                     src={`/${img}`}
@@ -234,13 +206,12 @@ function HackathonCard({ hackathon, index }) {
                     }}
                   />
                   {isActive && (
-                    <motion.div
+                    <div
                       className="absolute inset-0 rounded"
                       style={{ boxShadow: '0 0 0 1px rgba(255,183,197,0.5), 0 0 8px rgba(255,183,197,0.3)' }}
-                      layoutId={`thumb-glow-${hackathon.title}`}
                     />
                   )}
-                </motion.button>
+                </button>
               );
             })}
             {images.length > 5 && (
@@ -310,7 +281,7 @@ const DraggableArea = ({ hackathons, language }) => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto overflow-hidden">
+    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto">
       <FairyLightString width={containerWidth} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 px-2 sm:px-4 mt-2">
