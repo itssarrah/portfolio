@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 const IMAGES = [
-  '/fuji-transparent-opt.png',
-  '/133741897_10265182-opt.png',
-  '/branch-transparent-opt.png',
+  '/fuji-transparent.png',
+  '/133741897_10265182.png',
+  '/branch-transparent.png',
 ];
 
 function preloadImages(srcs) {
@@ -218,7 +218,7 @@ const CherryBlossomScene = ({ onLoaded }) => {
           className="absolute left-1/2 hero-fuji-wrap hero-enter-fuji"
           style={{ width: 'min(90vw, 900px)', bottom: '-2px' }}
         >
-          <img src="/fuji-transparent-opt.png" alt="" className="w-full h-auto" draggable={false} decoding="async" />
+          <img src="/fuji-transparent.png" alt="" className="w-full h-auto" draggable={false} decoding="async" />
         </div>
 
         {/* Cloud in front of Fuji */}
@@ -226,22 +226,22 @@ const CherryBlossomScene = ({ onLoaded }) => {
 
         {/* Cherry tree — left */}
         <div className="absolute bottom-0 hero-tree-left hero-enter-tree-left hero-tree-sway">
-          <img src="/133741897_10265182-opt.png" alt="" className="h-full w-auto" draggable={false} decoding="async" />
+          <img src="/133741897_10265182.png" alt="" className="h-full w-auto" draggable={false} decoding="async" />
         </div>
 
         {/* Cherry tree — right */}
         <div className="absolute bottom-0 hero-tree-right hero-enter-tree-right hero-tree-sway-alt" style={{ transform: 'scaleX(-1)' }}>
-          <img src="/133741897_10265182-opt.png" alt="" className="h-full w-auto" draggable={false} decoding="async" />
+          <img src="/133741897_10265182.png" alt="" className="h-full w-auto" draggable={false} decoding="async" />
         </div>
 
         {/* Branch — top right */}
         <div className="absolute hero-branch-topright hero-enter-branch-right hero-branch-sway">
-          <img src="/branch-transparent-opt.png" alt="" style={{ transform: 'scaleX(-1)' }} className="w-full h-auto" draggable={false} decoding="async" />
+          <img src="/branch-transparent.png" alt="" style={{ transform: 'scaleX(-1)' }} className="w-full h-auto" draggable={false} decoding="async" />
         </div>
 
         {/* Branch — top left */}
         <div className="absolute hero-branch-topleft hero-enter-branch-left hero-branch-sway-alt">
-          <img src="/branch-transparent-opt.png" alt="" className="w-full h-auto" draggable={false} decoding="async" />
+          <img src="/branch-transparent.png" alt="" className="w-full h-auto" draggable={false} decoding="async" />
         </div>
 
         {/* Falling petals */}
