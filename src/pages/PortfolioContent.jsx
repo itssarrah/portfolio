@@ -51,7 +51,7 @@ const PortfolioContent = ({
         <div className="relative">
           {/* Decorative branch — top left of about section */}
           <div className="hidden md:block absolute -top-8 -left-4 w-32 opacity-30 pointer-events-none decor-sway-branch">
-            <img src="/branch-transparent.png" alt="" className="w-full h-auto" draggable={false} />
+            <img src="/branch-transparent-opt.png" alt="" className="w-full h-auto" draggable={false} />
           </div>
           <ScrollAnimationWrapper>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-warm-brown text-center mb-2">

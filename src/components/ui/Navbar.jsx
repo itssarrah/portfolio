@@ -46,7 +46,7 @@ const Navbar = ({ activeSection, language, setLanguage, onNavigate, visible = tr
               className="flex items-center gap-2 font-heading text-xl font-bold text-warm-brown hover:text-sakura-500 transition-colors"
             >
               <img
-                src="/sarra1.png"
+                src="/sarra1-opt.jpg"
                 alt="Sarra"
                 className="w-12 h-12 rounded-full object-cover border-2 border-sakura-300 shadow-sm"
               />

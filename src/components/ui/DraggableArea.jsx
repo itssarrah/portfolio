@@ -1,7 +1,12 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ScrollAnimationWrapper from './ScrollAnimationWrapper';
+
+function toOptimized(path) {
+  if (!path.includes('EVENTS/')) return path;
+  return path.replace(/\.(png|jpg|jpeg)$/i, '-opt.jpg');
+}
 
 function FairyLightBulb({ delay = 0 }) {
   return (
@@ -62,7 +67,7 @@ function HackathonCard({ hackathon, index }) {
   const [isHovered, setIsHovered] = useState(false);
   const autoPlayRef = useRef(null);
   const touchStartX = useRef(null);
-  const images = hackathon.images;
+  const images = useMemo(() => hackathon.images.map(toOptimized), [hackathon.images]);
 
   const goTo = useCallback((newIndex) => {
     setDirection(newIndex > mainImageIndex ? 1 : -1);
@@ -103,20 +108,15 @@ function HackathonCard({ hackathon, index }) {
 
   return (
     <motion.div
-      className="relative"
+      className="relative hackathon-card-hover"
+      style={{ '--hover-rotate': `${hoverRotation}deg` }}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{
         duration: 0.6,
         delay: index * 0.12,
         ease: [0.22, 1, 0.36, 1],
-      }}
-      whileHover={{
-        y: -6,
-        rotate: hoverRotation,
-        scale: 1.02,
-        transition: { duration: 0.3 },
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

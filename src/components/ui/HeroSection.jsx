@@ -110,7 +110,7 @@ const HeroSection = ({ language, onReady }) => {
             }}
           >
             <img
-              src="/sarra.png"
+              src="/sarra-opt.jpg"
               alt="Sarra Arab"
               className="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover border-4 border-sakura-300 shadow-lg mx-auto mb-4 hero-photo-enter"
             />

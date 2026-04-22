@@ -534,6 +534,16 @@ html {
   animation: treeSwayAlt 8s ease-in-out infinite 1s;
 }
 
+/* Hackathon card hover — pure CSS */
+.hackathon-card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@media (hover: hover) {
+  .hackathon-card-hover:hover {
+    transform: translateY(-6px) rotate(var(--hover-rotate, 0deg)) scale(1.02);
+  }
+}
+
 /* Project card hover — pure CSS, no React re-renders */
 .project-card-hover {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
