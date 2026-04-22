@@ -67,17 +67,11 @@ function Butterfly({ className, style, size = 48, variant = 0 }) {
 }
 
 function ProjectCard({ project, index, isFeatured }) {
-  const direction = index % 2 === 0 ? 'left' : 'right';
-
   return (
     <motion.div
       className={isFeatured ? 'md:col-span-2' : ''}
-      initial={{
-        opacity: 0,
-        x: direction === 'left' ? -40 : 40,
-        y: 30,
-      }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay: (index % 3) * 0.1, ease: 'easeOut' }}
     >

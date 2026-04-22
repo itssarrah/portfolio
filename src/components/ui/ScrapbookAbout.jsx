@@ -93,7 +93,7 @@ const ScrapbookAbout = ({ language }) => {
 
         {/* Info cards below notebook */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-          <ScrollAnimationWrapper delay={0.2} direction="left">
+          <ScrollAnimationWrapper delay={0.2}>
             <div className="glass-card p-8">
               <div className="flex items-center gap-3 mb-5">
                 <GraduationCap size={24} className="text-sakura-500" />
@@ -114,7 +114,7 @@ const ScrapbookAbout = ({ language }) => {
             </div>
           </ScrollAnimationWrapper>
 
-          <ScrollAnimationWrapper delay={0.4} direction="right">
+          <ScrollAnimationWrapper delay={0.4}>
             <div className="glass-card p-8">
               <div className="flex items-center gap-3 mb-5">
                 <Briefcase size={24} className="text-sakura-500" />
