@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import ScrollAnimationWrapper from './ScrollAnimationWrapper';
+
 
 function toOptimized(path) {
   if (!path.includes('EVENTS/')) return path;
@@ -310,17 +310,15 @@ const DraggableArea = ({ hackathons, language }) => {
   }, []);
 
   return (
-    <ScrollAnimationWrapper>
-      <div ref={containerRef} className="relative w-full max-w-5xl mx-auto">
-        <FairyLightString width={containerWidth} />
+    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto overflow-hidden">
+      <FairyLightString width={containerWidth} />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 px-2 sm:px-4 mt-2">
-          {hackathons.map((h, i) => (
-            <HackathonCard key={h.title} hackathon={h} index={i} />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 px-2 sm:px-4 mt-2">
+        {hackathons.map((h, i) => (
+          <HackathonCard key={h.title} hackathon={h} index={i} />
+        ))}
       </div>
-    </ScrollAnimationWrapper>
+    </div>
   );
 };
 
