@@ -1,18 +1,33 @@
-// tailwind.config.js
 module.exports = {
   content: [
-    "./src/**/*.{html,js,jsx}", // this ensures Tailwind looks for classes in your JSX files
+    "./src/**/*.{html,js,jsx}",
   ],
   theme: {
     extend: {
       colors: {
-        primary: "#003092",
-        secondary: "#00879E",
-        accent: "#FFAB5B",
-        light: "#FFF2DB",
+        sakura: {
+          50: '#FFF5F7',
+          100: '#FFE8ED',
+          200: '#FFC0CB',
+          300: '#FFB7C5',
+          400: '#FF9AAF',
+          500: '#FF7B95',
+          600: '#E8607A',
+        },
+        blossom: {
+          cream: '#FFF8F0',
+          lavender: '#E8D5F5',
+          purple: '#C9A0DC',
+        },
+        warm: {
+          brown: '#4A3728',
+          light: '#6B5445',
+        },
       },
       fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
+        heading: ['Playfair Display', 'serif'],
+        body: ['Poppins', 'sans-serif'],
+        handwriting: ['Caveat', 'cursive'],
       },
     },
   },

@@ -1,11 +1,20 @@
 export const aiProjects = [
     {
+      title: "Sensei AI",
+      description: "AI-powered tutoring platform featuring RAG-based Q&A with source citations, interactive avatar, speech-to-text & text-to-speech, course library, and student management — built as a full-stack web application.",
+      tech: ["RAG", "LLMs", "React", "STT/TTS", "Avatars", "Node.js"],
+      status: "Spring 2026",
+      image: "sensei.jpg",
+      featured: true,
+    },
+    {
       title: "Dhakirate-Al-Djazair",
       description: "Educational platform using LLMs and RAG for interactive multilingual content delivery",
       tech: ["LLMs", "RAG", "React", "NLP"],
       status: "Fall 2025",
       github: "https://github.com/itssarrah/Dhakirate-Al-Djazair",
-      image: "Dhakira.png"
+      image: "Dhakira.png",
+      featured: true,
     },
     {
       title: "Speech Recognition for Darija and Kabyle",
@@ -62,10 +71,11 @@ export const devProjects = [
     {
   title: "Ma3ridy ~ Galleria",
   description: "The first Algerian platform connecting small businesses and artisans with clients, making it easier to find unique and handmade products.",
-  tech: ["Next.js", "Tailwind CSS", "Firebase"], // adjust if different
+  tech: ["Next.js", "Tailwind CSS", "Firebase"],
   status: "2024",
   github: "https://ma3ridy.com",
-  image: "galleria.jpg"
+  image: "galleria.jpg",
+  featured: true,
 },
 {
   title: "STOCKILY",
@@ -99,12 +109,21 @@ export const devProjects = [
 
   export const aiProjectsFR = [
   {
+    title: "Sensei AI",
+    description: "Plateforme de tutorat IA avec Q&R contextuelle basée sur RAG, citations de sources, avatar interactif, reconnaissance et synthèse vocale, bibliothèque de cours et gestion étudiante — application web full-stack.",
+    tech: ["RAG", "LLMs", "React", "STT/TTS", "Avatars", "Node.js"],
+    status: "Printemps 2026",
+    image: "sensei.jpg",
+    featured: true,
+  },
+  {
     title: "Dhakirate-Al-Djazair",
     description: "Plateforme éducative utilisant des LLMs et le RAG pour offrir du contenu interactif et multilingue.",
     tech: ["LLMs", "RAG", "React", "NLP"],
     status: "Automne 2025",
     github: "https://github.com/itssarrah/Dhakirate-Al-Djazair",
-    image: "Dhakira.png"
+    image: "Dhakira.png",
+    featured: true,
   },
   {
     title: "Reconnaissance Vocale pour le Darija et le Kabyle",
@@ -164,7 +183,8 @@ export const devProjectsFR = [
     tech: ["Next.js", "Tailwind CSS", "Firebase"],
     status: "2024",
     github: "https://ma3ridy.com",
-    image: "galleria.jpg"
+    image: "galleria.jpg",
+    featured: true,
   },
   {
     title: "STOCKILY",

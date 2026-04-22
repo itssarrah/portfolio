@@ -1,0 +1,581 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF5F7;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFB7C5;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF9AAF;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glass card utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 183, 197, 0.3);
+  border-radius: 16px;
+}
+
+/* Notebook / Scrapbook styles */
+.notebook {
+  background: linear-gradient(135deg, #faf6f0 0%, #f5ede3 100%);
+  border-radius: 8px;
+  box-shadow:
+    0 4px 6px -1px rgba(74, 55, 40, 0.1),
+    0 2px 4px -1px rgba(74, 55, 40, 0.06),
+    inset 0 0 40px rgba(74, 55, 40, 0.03);
+}
+
+.notebook-page {
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 31px,
+      rgba(255, 183, 197, 0.18) 31px,
+      rgba(255, 183, 197, 0.18) 32px
+    ),
+    linear-gradient(to bottom, #fefcf9 0%, #faf6f0 100%);
+  background-size: 100% 32px, 100% 100%;
+  position: relative;
+}
+
+.notebook-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40px;
+  width: 1.5px;
+  background: rgba(255, 140, 160, 0.25);
+}
+
+/* Spiral binding */
+.spiral-binding {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 10;
+}
+
+.spiral-ring {
+  width: 20px;
+  height: 12px;
+  border: 2px solid #9e8e7e;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c4b5a5 0%, #a89888 100%);
+}
+
+/* Polaroid frame */
+.polaroid {
+  background: white;
+  padding: 12px 12px 40px 12px;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  transform: rotate(-2deg);
+}
+
+/* Washi tape */
+.washi-tape {
+  position: absolute;
+  width: 80px;
+  height: 24px;
+  background: rgba(255, 183, 197, 0.6);
+  transform: rotate(-15deg);
+  z-index: 5;
+}
+
+.washi-tape-2 {
+  position: absolute;
+  width: 70px;
+  height: 24px;
+  background: rgba(232, 213, 245, 0.6);
+  transform: rotate(10deg);
+  z-index: 5;
+}
+
+/* Sparkle decorations */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+}
+
+.sparkle {
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+/* Page flip book shadow */
+.book-shadow {
+  filter: drop-shadow(0 10px 20px rgba(74, 55, 40, 0.15));
+}
+
+/* Navbar slide-in — pure CSS */
+.navbar-slide {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.3s ease,
+              backdrop-filter 0.3s ease,
+              box-shadow 0.3s ease;
+}
+.navbar-slide.navbar-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Typewriter cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: #FFB7C5;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+/* Hero overlay + photo + buttons — pure CSS entrance */
+.hero-overlay-enter {
+  animation: heroOverlayIn 0.8s ease both;
+}
+@keyframes heroOverlayIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-photo-enter {
+  animation: heroPhotoIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+@keyframes heroPhotoIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.hero-buttons-enter {
+  animation: heroFadeUp 0.5s ease 0.1s both;
+}
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-chevron-enter {
+  animation: heroFadeIn 0.5s ease 2s both;
+}
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.hero-chevron-bounce {
+  animation: chevronBounce 2s ease-in-out infinite;
+}
+@keyframes chevronBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* Section divider animations */
+@keyframes drawLine {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+.draw-in {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2s ease-out forwards;
+}
+
+/* Drag hint */
+@keyframes dragHintBounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+.drag-hint {
+  animation: dragHintBounce 1.5s ease-in-out infinite;
+}
+
+/* Floating animation for stickers */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--rotate, 0deg)); }
+  50% { transform: translateY(-8px) rotate(var(--rotate, 0deg)); }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Butterfly timeline animation */
+@keyframes butterflyFloat {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  25% { transform: translateY(-4px) rotate(1deg); }
+  50% { transform: translateY(-2px) rotate(-1deg); }
+  75% { transform: translateY(-6px) rotate(2deg); }
+}
+
+@keyframes wingFlap {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.7); }
+}
+
+.butterfly-animate {
+  animation: butterflyFloat 3s ease-in-out infinite;
+}
+
+.butterfly-wing-left {
+  transform-origin: 24px 24px;
+  animation: wingFlap 0.4s ease-in-out infinite;
+}
+
+.butterfly-wing-right {
+  transform-origin: 24px 24px;
+  animation: wingFlap 0.4s ease-in-out infinite 0.05s;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Hide scrollbar for thumbnail strips */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========== 2D Illustrated Hero ========== */
+
+.hero-scene {
+  user-select: none;
+  contain: layout style paint;
+}
+
+.hero-scene img,
+.hero-scene .hero-cloud,
+.hero-scene .hero-sun {
+  will-change: transform;
+}
+
+/* --- Loader --- */
+.hero-loader {
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+.hero-loader-exit {
+  opacity: 0;
+}
+.hero-loader-spinner {
+  animation: loaderSpin 3s linear infinite;
+}
+@keyframes loaderSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Entrance animations (CSS, compositor-thread) --- */
+/* All entrance elements start hidden, animate only when .hero-ready is on the parent */
+
+.hero-enter-sun {
+  top: 55%;
+  transform: translateX(-50%);
+  transition: top 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hero-ready .hero-enter-sun {
+  top: 15%;
+}
+
+.hero-enter-glow {
+  top: 45%;
+  transform: translateX(-50%);
+  transition: top 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hero-ready .hero-enter-glow {
+  top: 5%;
+}
+
+.hero-enter-fuji {
+  transform: translateX(-50%) translateY(80px);
+  transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.8s;
+}
+.hero-ready .hero-enter-fuji {
+  transform: translateX(-50%) translateY(0);
+}
+
+.hero-enter-tree-left {
+  transform: translateX(-120px);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.2s;
+}
+.hero-ready .hero-enter-tree-left {
+  transform: translateX(0);
+}
+
+.hero-enter-tree-right {
+  transform: scaleX(-1) translateX(-120px);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.4s;
+}
+.hero-ready .hero-enter-tree-right {
+  transform: scaleX(-1) translateX(0);
+}
+
+.hero-enter-branch-right {
+  transform: translate(60px, -40px);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1) 1.6s;
+}
+.hero-ready .hero-enter-branch-right {
+  transform: translate(0, 0);
+}
+
+.hero-enter-branch-left {
+  transform: translate(-60px, -40px);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1) 1.5s;
+}
+.hero-ready .hero-enter-branch-left {
+  transform: translate(0, 0);
+}
+
+/* Clouds */
+.hero-cloud {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  filter: blur(1px);
+}
+
+.hero-cloud-1 {
+  width: min(30vw, 280px);
+  height: min(8vw, 70px);
+  top: 22%;
+  left: -5%;
+  animation: cloudDrift1 25s ease-in-out infinite;
+}
+
+.hero-cloud-2 {
+  width: min(22vw, 200px);
+  height: min(6vw, 50px);
+  top: 30%;
+  right: -8%;
+  animation: cloudDrift2 30s ease-in-out infinite;
+}
+
+.hero-cloud-3 {
+  width: min(18vw, 160px);
+  height: min(5vw, 40px);
+  top: 18%;
+  right: 15%;
+  animation: cloudDrift1 22s ease-in-out infinite 5s;
+  opacity: 0.5;
+}
+
+.hero-cloud-4 {
+  width: min(50vw, 500px);
+  height: min(8vw, 70px);
+  bottom: 18%;
+  left: 25%;
+  animation: cloudDrift2 35s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+@keyframes cloudDrift1 {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(min(15vw, 120px)); }
+}
+
+@keyframes cloudDrift2 {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(min(-12vw, -100px)); }
+}
+
+/* Cherry blossom trees */
+.hero-tree-left {
+  left: -2%;
+  height: 65%;
+}
+
+.hero-tree-right {
+  right: -2%;
+  height: 55%;
+}
+
+/* Cherry blossom branches at corners */
+.hero-branch-topright {
+  top: 4%;
+  right: -3%;
+  width: min(30vw, 280px);
+}
+
+.hero-branch-topleft {
+  top: 4%;
+  left: -5%;
+  width: min(26vw, 240px);
+}
+
+/* Falling petals */
+.hero-petal {
+  position: absolute;
+  top: -20px;
+  border-radius: 50% 0 50% 0;
+  background: linear-gradient(135deg, #FFB7C5 0%, #FFC0CB 50%, #FFD6E0 100%);
+  animation: petalFall var(--fall-duration, 8s) linear infinite;
+  pointer-events: none;
+  z-index: 15;
+}
+
+@keyframes petalFall {
+  0% {
+    transform: translateY(-10px) rotate(0deg) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg) translateX(40px);
+    opacity: 0;
+  }
+}
+
+/* Tree & branch gentle sway */
+.hero-ready .hero-tree-sway {
+  transform-origin: bottom center;
+  animation: treeSway 6s ease-in-out infinite 2.5s;
+}
+.hero-ready .hero-tree-sway-alt {
+  transform-origin: bottom center;
+  animation: treeSwayAlt 7s ease-in-out infinite 3s;
+}
+.hero-ready .hero-branch-sway {
+  transform-origin: top right;
+  animation: branchSway 5s ease-in-out infinite 2.8s;
+}
+.hero-ready .hero-branch-sway-alt {
+  transform-origin: top left;
+  animation: branchSwayAlt 5.5s ease-in-out infinite 3.2s;
+}
+
+@keyframes treeSway {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2.5deg); }
+  75% { transform: rotate(-2deg); }
+}
+@keyframes treeSwayAlt {
+  0%, 100% { transform: scaleX(-1) rotate(0deg); }
+  30% { transform: scaleX(-1) rotate(-2.2deg); }
+  70% { transform: scaleX(-1) rotate(2.8deg); }
+}
+@keyframes branchSway {
+  0%, 100% { transform: rotate(0deg); }
+  40% { transform: rotate(3.5deg); }
+  60% { transform: rotate(-2.5deg); }
+}
+@keyframes branchSwayAlt {
+  0%, 100% { transform: rotate(0deg); }
+  35% { transform: rotate(-3deg); }
+  65% { transform: rotate(2.2deg); }
+}
+
+/* Sun pulse glow + gentle float */
+.hero-sun {
+  animation: sunPulse 4s ease-in-out infinite, sunFloat 8s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+  0%, 100% { filter: blur(2px) brightness(1); }
+  50% { filter: blur(3px) brightness(1.15); }
+}
+@keyframes sunFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* Scattered decorative element sway animations */
+.decor-sway-branch {
+  transform-origin: top left;
+  animation: branchSway 6s ease-in-out infinite;
+}
+.decor-sway-tree {
+  transform-origin: bottom center;
+  animation: treeSway 7s ease-in-out infinite;
+}
+.decor-sway-tree-alt {
+  transform-origin: bottom center;
+  animation: treeSwayAlt 8s ease-in-out infinite 1s;
+}
+
+/* Project card hover — pure CSS, no React re-renders */
+.project-card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.project-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 12px 40px rgba(74,55,40,0.12),
+    0 4px 12px rgba(255,183,197,0.2);
+}
+
+.project-img-hover {
+  transition: transform 0.4s ease;
+}
+.project-card-hover:hover .project-img-hover {
+  transform: scale(1.05);
+}
+
+/* Responsive hero adjustments */
+@media (max-width: 768px) {
+  .hero-tree-left {
+    left: -8%;
+    height: 45%;
+  }
+  .hero-tree-right {
+    right: -8%;
+    height: 38%;
+  }
+  .hero-branch-topright {
+    width: min(35vw, 160px);
+    top: 2%;
+    right: -5%;
+  }
+  .hero-branch-topleft {
+    width: min(30vw, 140px);
+    top: 2%;
+    left: -8%;
+  }
+  .hero-cloud-1 {
+    top: 25%;
+  }
+  .hero-cloud-4 {
+    bottom: 22%;
+  }
+}
